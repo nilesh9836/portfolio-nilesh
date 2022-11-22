@@ -1,13 +1,16 @@
 <template>
-  <v-container class="justify-content-end" >
   <div class="center">
   <div class="mobile">
-    <div class="screen active"></div>
-    <div class="home"></div>
+    <div class="screen active">
+      <h1>Hello</h1>
+      <h1>There,</h1>
+      <h1>Stranger!</h1>
+    </div>
+    <div class="home">
+    </div>
     <div class="inner"></div>
   </div>
 </div>
-</v-container>
 </template>
 
 <script>
