@@ -1,57 +1,59 @@
 <template>
-  <div>
-    <header>
-      <nav>
-        <router-link :to="{ name: 'Home' }">Home</router-link>
-        <router-link :to="{ name: 'About' }">About</router-link>
-        <router-link :to="{ name: 'Projects' }">Projects</router-link>
-        <router-link :to="{ name: 'Contacts' }">Contact</router-link>
-      </nav>
-    </header>
-
-    <main>
-      <router-view />
-    </main>
-
-    <footer>
-      Copyright © 2021 Portfolio Website
-    </footer>
-  </div>
+  <v-container fluid grid-list-md class="pt-0 px-0">
+    <v-app>
+      <v-row>
+        <v-col cols="3">
+          <side-bar></side-bar>
+        </v-col>
+        <v-col>
+          <v-app-bar app color="white" dark>
+            <v-btn outlined
+              ><router-link :to="{ name: 'Home' }" class="text-decoration"
+                >Home</router-link
+              ></v-btn
+            >
+            <v-btn outlined class="mx-2"
+              ><router-link :to="{ name: 'About' }" class="text-decoration"
+                >About</router-link
+              ></v-btn
+            >
+            <v-btn outlined>
+              <router-link :to="{ name: 'Projects' }" class="text-decoration"
+                >Projects</router-link
+              ></v-btn
+            >
+            <v-btn outlined class="mx-2"
+              ><router-link :to="{ name: 'Contacts' }" class="text-decoration"
+                >Contact</router-link
+              ></v-btn
+            >
+          </v-app-bar>
+          <v-main>
+            <v-card outlined :elevation="0" class="pa-6" height="788">
+              <router-view />
+            </v-card>
+          </v-main>
+        </v-col>
+      </v-row>
+    </v-app>
+  </v-container>
 </template>
 
 <script>
+import SideBar from "./components/SideBar.vue";
 export default {
-  name: 'App',
-  created() {
-    // Fetch data from an API or database here
-    // this.projects = data;
+  name: "App",
+  components: {
+    SideBar,
   },
-  data() {
-    return {
-      projects: [
-        {
-          id: 1,
-          name: 'Project 1',
-          image: 'path/to/project1.jpg',
-          description: 'A description of project 1.',
-          link: 'http://project1.com'
-        },
-        {
-          id: 2,
-          name: 'Project 2',
-          image: 'path/to/project2.jpg',
-          description: 'A description of project 2.',
-          link: 'http://project2.com'
-        },
-        {
-          id: 3,
-          name: 'Project 3',
-          image: 'path/to/project3.jpg',
-          description: 'A description of project 3.',
-          link: 'http://project3.com'
-        }
-      ]
-    }
-  }
-}
+  data: () => ({
+    //
+  }),
+};
 </script>
+<style scoped>
+.text-decoration {
+  text-decoration: none;
+  color: wheat;
+}
+</style>

@@ -1,14 +1,8 @@
 <template>
-  <div>
-    <h1>Welcome to my portfolio!</h1>
-    <p>My name is {{name}} and I'm a {{occupation}}</p>
-    <h2>Recent Projects</h2>
-    <ul>
-      <li v-for="project in projects" :key="project.id">
-        {{ project.title }}
-      </li>
-    </ul>
-  </div>
+  <v-container>
+     <h1>Welcome </h1>
+     <p>My name </p>
+  </v-container>
 </template>
 
 <script>

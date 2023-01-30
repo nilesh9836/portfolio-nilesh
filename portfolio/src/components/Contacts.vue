@@ -1,32 +1,33 @@
 <template>
-  <form @submit.prevent="submitForm">
+  
+    <v-form @submit.prevent="submitForm">
     <label>
       Name:
-      <input type="text" v-model="formData.name" required />
+      <v-text-field type="text" v-model="formData.name" required />
     </label>
     <label>
       Email:
-      <input type="email" v-model="formData.email" required />
+      <v-text-field type="email" v-model="formData.email" required />
     </label>
     <label>
       Message:
-      <textarea v-model="formData.message" required></textarea>
+      <v-textarea v-model="formData.message" required></v-textarea>
     </label>
-    <button type="submit">Send</button>
-  </form>
+    <v-btn type="submit">Send</v-btn>
+  </v-form>
 </template>
 
 <script>
 export default {
-  name: 'ContactForm',
+  name: "ContactForm",
   data() {
     return {
       formData: {
-        name: '',
-        email: '',
-        message: ''
-      }
-    }
+        name: "",
+        email: "",
+        message: "",
+      },
+    };
   },
   methods: {
     submitForm() {
@@ -35,8 +36,8 @@ export default {
       // axios.post('/api/contact', this.formData)
       // .then(response => { /* handle success */ })
       // .catch(error => { /* handle error */ })
-      console.log(this.formData)
-    }
-  }
-}
+      console.log(this.formData);
+    },
+  },
+};
 </script>
